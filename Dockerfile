@@ -34,25 +34,6 @@ RUN composer global require 'phing/phing=2.*' &&\
     composer global require 'phpunit/phpunit=*'
 
 
-# WP-cli
-
-RUN curl -o /bin/wp-cli.phar https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
-COPY scripts/wp-su.sh /bin/wp
-# RUN ln -s /bin/wp-cli.phar /bin/wp
-RUN chmod +x /bin/wp-cli.phar /bin/wp && \
-    dos2unix /bin/wp
-
-
-# Drush
-
-# Install Drush 8 with the phar file.
-# Set the Drush version.
-ENV DRUSH_VERSION 8.1.16
-RUN curl -fsSL -o /usr/local/bin/drush "https://github.com/drush-ops/drush/releases/download/$DRUSH_VERSION/drush.phar" && \
-  chmod +x /usr/local/bin/drush
-RUN drush core-status
-
-
 # NPM / Yarn
 
 RUN apt-get update && \
