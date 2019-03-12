@@ -31,8 +31,7 @@ ENV COMPOSER_VERSION master
 RUN php /tmp/composer-setup.php --no-ansi --install-dir=/usr/local/bin --filename=composer --snapshot && rm -rf /tmp/composer-setup.php
 # Setup the Composer installer and extensions
 RUN composer global require 'phing/phing=2.*' &&\
-    composer global require 'phpunit/phpunit=*' &&\
-    composer global require 'theseer/phpdox=@stable'
+    composer global require 'phpunit/phpunit=*'
 
 
 # WP-cli
