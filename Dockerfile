@@ -12,6 +12,8 @@ RUN apt-get update && \
     build-essential \
     gnupg \
     lftp \
+    git \
+    tar \
   && rm -r /var/lib/apt/lists/*
 
 
