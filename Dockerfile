@@ -14,6 +14,10 @@ RUN apt-get update && \
     lftp \
     git \
     tar \
+    make \
+    g++ \
+    python \
+    openssh-client \
   && rm -r /var/lib/apt/lists/*
 
 
