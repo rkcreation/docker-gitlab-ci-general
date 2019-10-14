@@ -26,6 +26,7 @@ RUN buildDeps=" \
         libbz2-dev \
         libmemcached-dev \
         libsasl2-dev \
+        libzip-dev \
     " \
     runtimeDeps=" \
         curl \
