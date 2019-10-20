@@ -81,3 +81,6 @@ RUN apt-get update && \
   DEBIAN_FRONTEND=noninteractive apt-get install -y nodejs yarn \
   && rm -r /var/lib/apt/lists/*
 RUN npm install -g gulp release-it
+
+# See: https://npm.community/t/npm-ci-not-running-prepare-for-git-dependencies-when-run-as-root-in-docker/4485/5
+RUN npm config set unsafe-perm true
