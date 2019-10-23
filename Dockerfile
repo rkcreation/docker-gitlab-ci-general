@@ -6,6 +6,8 @@ LABEL maintainer="nicolas@rkcreation.fr"
 RUN apt-get update && \
   DEBIAN_FRONTEND=noninteractive apt-get install -y \
     curl \
+    rsync \
+    sshpass \
     wget \
     unzip \
     build-essential \
