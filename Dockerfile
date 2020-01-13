@@ -1,4 +1,4 @@
-FROM php:7-stretch
+FROM php:7.3-stretch
 LABEL maintainer="nicolas@rkcreation.fr"
 
 # Packages
@@ -28,7 +28,6 @@ RUN buildDeps=" \
         libbz2-dev \
         libmemcached-dev \
         libsasl2-dev \
-        libzip-dev \
     " \
     runtimeDeps=" \
         curl \
@@ -41,6 +40,8 @@ RUN buildDeps=" \
         libpng-dev \
         libpq-dev \
         libxml2-dev \
+        libzip-dev \
+        zip
     " \
     && apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y $buildDeps $runtimeDeps \
     && docker-php-ext-install bcmath bz2 calendar iconv intl mbstring mysqli opcache pdo_mysql pdo_pgsql pgsql soap zip \
