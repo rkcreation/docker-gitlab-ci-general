@@ -76,7 +76,7 @@ RUN curl -o /tmp/composer-setup.php https://getcomposer.org/installer \
     && php -r "if (hash('SHA384', file_get_contents('/tmp/composer-setup.php')) !== trim(file_get_contents('/tmp/composer-setup.sig'))) { unlink('/tmp/composer-setup.php'); echo 'Invalid installer' . PHP_EOL; exit(1); }"
 ENV COMPOSER_VERSION 1.10.7
 # Install Composer
-RUN php /tmp/composer-setup.php --no-ansi --install-dir=/usr/local/bin --filename=composer --snapshot && rm -rf /tmp/composer-setup.php
+RUN php /tmp/composer-setup.php --no-ansi --install-dir=/usr/local/bin --filename=composer --version=$COMPOSER_VERSION && rm -rf /tmp/composer-setup.php
 # Setup the Composer installer and extensions
 RUN composer global require 'phing/phing=2.*' &&\
     composer global require 'phpunit/phpunit=*'
