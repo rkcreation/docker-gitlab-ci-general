@@ -1,4 +1,4 @@
-FROM php:7.4-stretch
+FROM php:7.3-stretch
 LABEL maintainer="nicolas@rkcreation.fr"
 
 ENV COMPOSER_CACHE_DIR /cache/composer
